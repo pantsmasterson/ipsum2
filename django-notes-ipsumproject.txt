@@ -1,0 +1,72 @@
+Using the following instructions: 
+
+http://www.saltycrane.com/blog/2009/05/notes-using-pip-and-virtualenv-django/
+
+created a virtualenv using Python 2.7 inside a directoyr named ipsum inside the customipsum folder in my home folder. 
+
+$ virtualenv --distribute --python=/usr/bin/python2.7 ipsum-py27
+  (command)   (create the env) (use this python)      (make this dir and put it in here)
+
+renamed the directory ipsum
+
+mv ipsum-py27 ipsum
+
+then activated that source 
+
+source ipsum/bin/activate
+
+and installed Yolk
+
+pip install yolk
+
+and installed Django
+
+pip install Django
+
+after some failure notices (permission denied) tried as sudo
+
+sudo pip install Django
+
+apparently successful 
+
+...but Python can't see it?
+
+because I was typing import Django with a capital D like a dumbass.
+
+Since I'll be creating the Django project separate from the VEnv, I rename that directory (again)
+
+mv ipsum ipsum-ve 
+
+...this way I know where the virtual environment is. 
+
+Reactivate the virtual environment and create my project 
+
+django-admin.py startproject ipsum
+
+which creates my ipsum directory and puts the project inside it
+
+rename the "outer" ipsum directory (outer container) for clarity
+
+mv ipsum ipsum-cont
+
+inside ipsum project, I edit the settings.py file, setting up sqlite3 and activating the admin function, then run syncdb to set up tables. 
+
+moving back to ipsum-cont, I create the boilerplate for this project by running 
+
+python manage.py startapp boilerplates
+
+I copy the models.py over from the customipsum backup from the original project
+
+and create the admin.py by copying it over from the original backup
+
+I add "boilerplates" to the installed apps in settings.py for ipsum 
+
+and run syncdb again to put the boilerplates tables in the db 
+
+run the server again to check
+
+looks OK
+
+
+
+

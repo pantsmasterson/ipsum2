@@ -1,0 +1,11 @@
+Using the following instructions: 
+
+http://www.saltycrane.com/blog/2009/05/notes-using-pip-and-virtualenv-django/
+
+created a virtualenv using Python 2.7 inside a directoyr named ipsum inside the customipsum folder in my home folder. 
+
+$ virtualenv --distribute --python=/usr/bin/python2.7 ipsum
+  (command)   (create the env) (use this python)      (make this dir and put it in here)
+
+then activated that source 
+
